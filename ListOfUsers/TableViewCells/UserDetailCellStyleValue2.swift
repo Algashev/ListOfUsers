@@ -1,0 +1,128 @@
+//
+//  UserDetailCellStyleValue2.swift
+//  ListOfUsers
+//
+//  Created by Александр Алгашев on 21/09/2019.
+//  Copyright © 2019 Александр Алгашев. All rights reserved.
+//
+
+import UIKit
+import CoreLocation
+
+class UserDetailCellStyleValue2: UITableViewCell {
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .value2, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    func configureWith(user: User, andCellType cellType: UserDetailCellType) {
+        switch cellType {
+        case .age:
+            self.textLabel?.text = "age"
+            self.detailTextLabel?.text = String(describing: user.age)
+        case .eyeColor:
+            self.textLabel?.text = "eye color"
+            self.detailTextLabel?.text = String(describing: user.eyeColor)
+        case .company:
+            self.textLabel?.text = "company"
+            self.detailTextLabel?.text = String(describing: user.company)
+        case .email:
+            self.textLabel?.text = "email"
+            self.detailTextLabel?.text = String(describing: user.email)
+        case .phone:
+            self.textLabel?.text = "phone"
+            self.detailTextLabel?.text = String(describing: user.phone)
+        case .address:
+            self.textLabel?.text = "address"
+            self.detailTextLabel?.numberOfLines = 0
+            self.detailTextLabel?.text = String(describing: user.address)
+        case .location:
+            self.textLabel?.text = "location"
+            self.detailTextLabel?.text = self.convertDoublesToDegreesCoordinates(latitude: user.latitude, longitude: user.longitude)
+        case .balance:
+            self.textLabel?.text = "balance"
+            self.detailTextLabel?.text = self.dropZeroFractionFrom(user.balance)
+        case .registered:
+            self.textLabel?.text = "registered"
+            self.detailTextLabel?.text = self.formatDate(user.registered)
+        case .favoriteFruit:
+            self.textLabel?.text = "favorite fruit"
+            self.detailTextLabel?.text = self.getFruitEmojiFrom(user.favoriteFruit)
+        case .about:
+            self.textLabel?.text = "about"
+            self.detailTextLabel?.numberOfLines = 0
+            self.detailTextLabel?.text = String(describing: user.about)
+        case .tags:
+            self.textLabel?.text = "tags"
+            self.detailTextLabel?.numberOfLines = 0
+            self.detailTextLabel?.text = String(describing: user.tags)
+        case .friends:
+            self.textLabel?.text = "friends"
+            self.detailTextLabel?.numberOfLines = 0
+            self.detailTextLabel?.text = String(describing: user.friends)
+//        default:
+//            break
+        }
+    }
+    
+    private func convertDoublesToDegreesCoordinates(latitude: Double, longitude: Double) -> String {
+        var longitudeString = longitude > 0 ? "E" : "W"
+        longitudeString += self.convertToDegreesFromDouble(longitude)
+        var latitudeString = latitude > 0 ? "N" : "S"
+        latitudeString += self.convertToDegreesFromDouble(latitude)
+        return "\(longitudeString) \(latitudeString)"
+    }
+    
+    private func convertToDegreesFromDouble(_ value: Double) -> String {
+        var value = abs(value)
+        let degrees = floor(value)
+        value = (value - degrees) * 60
+        let minutes = floor(value)
+        value = (value - minutes) * 60
+        let seconds = floor(value)
+        return "\(Int(degrees))°\(self.formatDouble(minutes))′\(self.formatDouble(seconds))″"
+    }
+    
+    private func formatDouble(_ value: Double) -> String {
+        return String(format: "%02d", Int(value))
+    }
+    
+    private func dropZeroFractionFrom(_ value: String) -> String {
+        let array = value.split(separator: ".")
+        guard
+            let fraction = array.last,
+            let integer = array.first
+        else { return value }
+        return Int(fraction) == 0 ? String(integer) : value
+    }
+    
+    private func getFruitEmojiFrom(_ value: FavoriteFruit) -> String {
+        switch value {
+        case .apple: return "🍎"
+        case .banana: return "🍌"
+        case .strawberry: return "🍓"
+        }
+    }
+    
+    private func formatDate(_ value: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm dd.MM.yy"
+        guard let date = Date(iso8601Date: value) else { return value }
+        return dateFormatter.string(from: date)
+    }
+}
