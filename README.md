@@ -41,3 +41,5 @@ https://www.dropbox.com/s/s8g63b149tnbg8x/users.json?dl=0
 - список friends должен выводиться в виде вертикального списка, аналогичного по наполнению и поведению списку, описанному в пункте 1. Экран списка пользователей
 - переход по кнопке back должен обеспечивать переход по всей иерархии открытых экранов, а не вести на экран списка.
 
+<div>Icon made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+
