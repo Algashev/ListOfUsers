@@ -109,7 +109,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
         return self.interactor.getUser(withUserId: friendId)
     }
     
-    private func cellForFriendsCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    private func configureFriendsCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? UsersListCell,
             let friend = self.getFriendForRow(indexPath.row)
@@ -118,9 +118,9 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
         return cell
     }
     
-    func cellForUsersList(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func cellForUserDetails(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 1 {
-            return self.cellForFriendsCell(tableView, cellForRowAt: indexPath)
+            return self.configureFriendsCell(tableView, cellForRowAt: indexPath)
         }
         switch indexPath.row {
         case 1:

@@ -22,7 +22,7 @@ protocol UserDetailsPresenterProtocol: class {
     func getNumberOfSections() -> Int
     func getNumberOfRows(InSection section: Int) -> Int
     func getTitleForHeader(InSection section: Int) -> String?
-    func cellForUsersList(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    func cellForUserDetails(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func didSelectIndexPath(_ indexPath: IndexPath)
 }
 

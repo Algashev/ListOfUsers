@@ -63,7 +63,7 @@ class UserDetailsTableViewController: UITableViewController, UserDetailsViewProt
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Configure the cell...
-        return self.presenter.cellForUsersList(tableView, cellForRowAt: indexPath)
+        return self.presenter.cellForUserDetails(tableView, cellForRowAt: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
