@@ -12,6 +12,8 @@ class UserDetailTagCell: UITableViewCell {
     var user: User? {
         didSet {
             self.tagBodyLabel.text = user?.tags.map { "#\($0)" }.joined(separator: " ")
+            self.tagBodyLabel.sizeToFit()
+            self.tagScrollView.contentSize = self.tagBodyLabel.frame.size
         }
     }
     
@@ -54,11 +56,7 @@ class UserDetailTagCell: UITableViewCell {
         self.tagScrollView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
         self.tagScrollView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
         self.tagScrollView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5).isActive = true
-        
-        self.tagBodyLabel.topAnchor.constraint(equalTo: self.tagTitleLabel.bottomAnchor, constant: 6).isActive = true
-        self.tagBodyLabel.leadingAnchor.constraint(equalTo: self.tagScrollView.leadingAnchor).isActive = true
-        self.tagBodyLabel.trailingAnchor.constraint(equalTo: self.tagScrollView.trailingAnchor).isActive = true
-        self.tagBodyLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5).isActive = true
+        self.tagScrollView.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
