@@ -119,10 +119,9 @@ class UserDetailCellStyleValue2: UITableViewCell {
         }
     }
     
-    private func formatDate(_ value: String) -> String {
+    private func formatDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm dd.MM.yy"
-        guard let date = Date(iso8601Date: value) else { return value }
         return dateFormatter.string(from: date)
     }
 }
