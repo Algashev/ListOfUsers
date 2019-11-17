@@ -35,6 +35,7 @@
 		FFCBE380233662A40037ABA0 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE37F233662A40037ABA0 /* Date.swift */; };
 		FFCBE382233669230037ABA0 /* UserDetailAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE381233669230037ABA0 /* UserDetailAboutCell.swift */; };
 		FFCBE385233697180037ABA0 /* UserDetailTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE384233697180037ABA0 /* UserDetailTagCell.swift */; };
+		FFED01E1238174A100F9A45C /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED01E0238174A100F9A45C /* TimeInterval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		FFCBE37F233662A40037ABA0 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FFCBE381233669230037ABA0 /* UserDetailAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailAboutCell.swift; sourceTree = "<group>"; };
 		FFCBE384233697180037ABA0 /* UserDetailTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailTagCell.swift; sourceTree = "<group>"; };
+		FFED01E0238174A100F9A45C /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				FFCBE36A23352D4A0037ABA0 /* RepeatingTimer.swift */,
 				FFCBE34C233288950037ABA0 /* UINavigationController.swift */,
 				FFCBE37F233662A40037ABA0 /* Date.swift */,
+				FFED01E0238174A100F9A45C /* TimeInterval.swift */,
 				FFCBE369233529420037ABA0 /* Services */,
 				FFCBE3412332875D0037ABA0 /* Assets.xcassets */,
 				FFCBE3432332875D0037ABA0 /* LaunchScreen.storyboard */,
@@ -245,6 +248,7 @@
 				FFCBE36B23352D4A0037ABA0 /* RepeatingTimer.swift in Sources */,
 				FFCBE385233697180037ABA0 /* UserDetailTagCell.swift in Sources */,
 				FFCBE34D233288950037ABA0 /* UINavigationController.swift in Sources */,
+				FFED01E1238174A100F9A45C /* TimeInterval.swift in Sources */,
 				FFCBE358233297B20037ABA0 /* UsersListProtocols.swift in Sources */,
 				FFCBE34F23328F6B0037ABA0 /* UsersListTableViewController.swift in Sources */,
 				FFCBE33B2332875A0037ABA0 /* AppDelegate.swift in Sources */,

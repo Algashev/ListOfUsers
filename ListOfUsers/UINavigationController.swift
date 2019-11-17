@@ -10,12 +10,12 @@ import UIKit
 
 extension UINavigationController {
     @discardableResult
-    convenience init(for appDelegate: AppDelegate, with controller: UIViewController) {
+    convenience init(with controller: UIViewController) {
         self.init()
-        appDelegate.window = UIWindow(frame: UIScreen.main.bounds)
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.window = UIWindow(frame: UIScreen.main.bounds)
+        appDelegate?.window?.rootViewController = self
+        appDelegate?.window?.makeKeyAndVisible()
         self.viewControllers = [controller]
-        guard let window = appDelegate.window else { return }
-        window.rootViewController = self
-        window.makeKeyAndVisible()
     }
 }

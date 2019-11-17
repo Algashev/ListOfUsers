@@ -10,7 +10,9 @@ import Foundation
 
 extension Date {
     init?(iso8601Date date: String) {
-        guard let date = ISO8601DateFormatter().date(from:date) else { return nil }
+        guard let date = ISO8601DateFormatter().date(from: date)
+        else { return nil }
+        
         self = date
     }
 }
