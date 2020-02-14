@@ -15,13 +15,12 @@ class UsersListCell: UITableViewCell {
             self.nameLabel.text = user.name
             self.emailLabel.text = user.email
             self.isActiveLabel.text = user.isActive ? "Active" : "Inactive"
+            
             self.isActiveLabel.textColor = user.isActive ? #colorLiteral(red: 0, green: 0.4833333333, blue: 1, alpha: 1) : #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
             self.backgroundColor = user.isActive ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.9601849914, green: 0.9601849914, blue: 0.9601849914, alpha: 1)
             self.accessoryType = user.isActive ? .disclosureIndicator : .none
-            if let constraint = self.horizontalStackViewTrailingConstraint {
-                constraint.constant = user.isActive ? -10 : -20
-                self.contentView.updateConstraintsIfNeeded()
-            }
+            self.trailingConstraint?.constant = user.isActive ? -10 : -20
+            self.contentView.updateConstraintsIfNeeded()
         }
     }
     
@@ -50,7 +49,7 @@ class UsersListCell: UITableViewCell {
     private let verticalStackView = UsersListStackView(axis: .vertical)
     private let horizontalStackView = UsersListStackView(axis: .horizontal)
     
-    private var horizontalStackViewTrailingConstraint: NSLayoutConstraint?
+    private var trailingConstraint: NSLayoutConstraint?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -66,7 +65,7 @@ class UsersListCell: UITableViewCell {
         
         self.horizontalStackView.addConstraint(.centerY, equalTo: self.contentView)
         self.horizontalStackView.addConstraint(.leading, equalTo: self.contentView, constant: 20)
-        self.horizontalStackViewTrailingConstraint = self.horizontalStackView.addConstraint(.trailing, equalTo: self.contentView, constant: -20)
+        self.trailingConstraint = self.horizontalStackView.addConstraint(.trailing, equalTo: self.contentView, constant: -20)
     }
     
     required init?(coder aDecoder: NSCoder) {
