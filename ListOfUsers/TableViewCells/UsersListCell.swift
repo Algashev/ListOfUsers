@@ -57,11 +57,12 @@ class UsersListCell: UITableViewCell {
 
         self.contentView.addSubview(self.horizontalStackView)
         
-        self.horizontalStackView.addArrangedSubview(self.verticalStackView)
-        self.horizontalStackView.addArrangedSubview(self.isActiveLabel)
-    
-        self.verticalStackView.addArrangedSubview(self.nameLabel)
-        self.verticalStackView.addArrangedSubview(self.emailLabel)
+        self.horizontalStackView.addArrangedSubviews(
+            [self.verticalStackView, self.isActiveLabel]
+        )
+        self.verticalStackView.addArrangedSubviews(
+            [self.nameLabel, self.emailLabel]
+        )
         
         self.horizontalStackView.constraint(.centerY, equalTo: self.contentView).activate()
         self.horizontalStackView.constraint(.leading, equalTo: self.contentView, constant: 20).activate()
