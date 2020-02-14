@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF1E4D7323F717CF00F33361 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E4D7223F717CF00F33361 /* UIView.swift */; };
 		FFCBE33B2332875A0037ABA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE33A2332875A0037ABA0 /* AppDelegate.swift */; };
 		FFCBE3422332875D0037ABA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFCBE3412332875D0037ABA0 /* Assets.xcassets */; };
 		FFCBE3452332875D0037ABA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCBE3432332875D0037ABA0 /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF1E4D7223F717CF00F33361 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		FFCBE3372332875A0037ABA0 /* ListOfUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListOfUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCBE33A2332875A0037ABA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCBE3412332875D0037ABA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +85,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF1E4D7123F7154200F33361 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFCBE34C233288950037ABA0 /* UINavigationController.swift */,
+				FFCBE37F233662A40037ABA0 /* Date.swift */,
+				FF1E4D7223F717CF00F33361 /* UIView.swift */,
+				FFED01E0238174A100F9A45C /* TimeInterval.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FFCBE32E2332875A0037ABA0 = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +122,7 @@
 				FFCBE3652335239E0037ABA0 /* AppSettings.swift */,
 				FFCBE35B2332A1B40037ABA0 /* User.swift */,
 				FFCBE36A23352D4A0037ABA0 /* RepeatingTimer.swift */,
-				FFCBE34C233288950037ABA0 /* UINavigationController.swift */,
-				FFCBE37F233662A40037ABA0 /* Date.swift */,
-				FFED01E0238174A100F9A45C /* TimeInterval.swift */,
+				FF1E4D7123F7154200F33361 /* Extensions */,
 				FFCBE369233529420037ABA0 /* Services */,
 				FFCBE3412332875D0037ABA0 /* Assets.xcassets */,
 				FFCBE3432332875D0037ABA0 /* LaunchScreen.storyboard */,
@@ -262,6 +273,7 @@
 				FFCBE380233662A40037ABA0 /* Date.swift in Sources */,
 				FFCBE368233529060037ABA0 /* StorageService.swift in Sources */,
 				FFCBE37A233571700037ABA0 /* UserDetailsConfigurator.swift in Sources */,
+				FF1E4D7323F717CF00F33361 /* UIView.swift in Sources */,
 				FFCBE372233570F20037ABA0 /* UserDetailsProtocols.swift in Sources */,
 				FFCBE382233669230037ABA0 /* UserDetailAboutCell.swift in Sources */,
 				FFCBE374233570F20037ABA0 /* UserDetailsTableViewController.swift in Sources */,

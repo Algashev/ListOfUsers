@@ -63,8 +63,8 @@ class UsersListCell: UITableViewCell {
         self.verticalStackView.addArrangedSubview(self.nameLabel)
         self.verticalStackView.addArrangedSubview(self.emailLabel)
         
-        self.horizontalStackView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        self.horizontalStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+        self.horizontalStackView.constraint(.centerY, equalTo: self.contentView).isActive = true
+        self.horizontalStackView.constraint(.leading, equalTo: self.contentView, constant: 20).isActive = true
 
         self.horizontalStackViewTrailingConstraint = NSLayoutConstraint(
             item: self.horizontalStackView,
