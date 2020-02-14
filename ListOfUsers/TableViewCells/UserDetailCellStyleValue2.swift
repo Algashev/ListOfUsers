@@ -95,11 +95,7 @@ class UserDetailCellStyleValue2: UITableViewCell {
         let minutes = floor(value)
         value = (value - minutes) * 60
         let seconds = floor(value)
-        return "\(Int(degrees))°\(self.formatDouble(minutes))′\(self.formatDouble(seconds))″"
-    }
-    
-    private func formatDouble(_ value: Double) -> String {
-        return String(format: "%02d", Int(value))
+        return "\(Int(degrees))°\(Int(minutes).format("%02d"))′\(Int(seconds).format("%02d"))″"
     }
     
     private func dropZeroFractionFrom(_ value: String) -> String {
