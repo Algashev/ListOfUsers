@@ -19,17 +19,6 @@ class UserDetailCellStyleValue2: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func configureWith(user: User, andCellType cellType: UserDetailCellType) {
         switch cellType {
         case .age:
@@ -75,8 +64,6 @@ class UserDetailCellStyleValue2: UITableViewCell {
             self.textLabel?.text = "friends"
             self.detailTextLabel?.numberOfLines = 0
             self.detailTextLabel?.text = String(describing: user.friends)
-//        default:
-//            break
         }
     }
     
