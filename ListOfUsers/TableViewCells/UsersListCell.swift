@@ -15,10 +15,10 @@ class UsersListCell: UITableViewCell {
             self.nameLabel.text = user.name
             self.emailLabel.text = user.email
             self.isActiveLabel.text = user.isActive ? "Active" : "Inactive"
-            self.isActiveLabel.textColor = user.isActive ? #colorLiteral(red: 0, green: 0.4833333333, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            self.isActiveLabel.textColor = user.isActive ? #colorLiteral(red: 0, green: 0.4833333333, blue: 1, alpha: 1) : #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
             self.backgroundColor = user.isActive ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.9601849914, green: 0.9601849914, blue: 0.9601849914, alpha: 1)
             self.accessoryType = user.isActive ? .disclosureIndicator : .none
-            if let constraint = self.isActiveLabelTrailingConstraint {
+            if let constraint = self.horizontalStackViewTrailingConstraint {
                 constraint.constant = user.isActive ? -10 : -20
                 self.contentView.updateConstraintsIfNeeded()
             }
@@ -39,34 +39,42 @@ class UsersListCell: UITableViewCell {
     private let emailLabel = UsersListLabel(textStyle: .footnote, textColor: #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1))
     private let isActiveLabel = UsersListLabel(textStyle: .subheadline, textAlignment: .right)
     
-    private var isActiveLabelTrailingConstraint: NSLayoutConstraint?
+    private class UsersListStackView: UIStackView {
+        convenience init(axis: NSLayoutConstraint.Axis) {
+            self.init()
+            self.translatesAutoresizingMaskIntoConstraints = false
+            self.axis = axis
+        }
+    }
+    
+    private let verticalStackView = UsersListStackView(axis: .vertical)
+    private let horizontalStackView = UsersListStackView(axis: .horizontal)
+    
+    private var horizontalStackViewTrailingConstraint: NSLayoutConstraint?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.contentView.addSubview(nameLabel)
-        self.contentView.addSubview(emailLabel)
-        self.contentView.addSubview(isActiveLabel)
+
+        self.contentView.addSubview(self.horizontalStackView)
         
-        self.nameLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 5).isActive = true
-        self.nameLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+        self.horizontalStackView.addArrangedSubview(self.verticalStackView)
+        self.horizontalStackView.addArrangedSubview(self.isActiveLabel)
+    
+        self.verticalStackView.addArrangedSubview(self.nameLabel)
+        self.verticalStackView.addArrangedSubview(self.emailLabel)
         
-        self.emailLabel.topAnchor.constraint(equalTo: self.nameLabel.bottomAnchor).isActive = true
-        self.emailLabel.leadingAnchor.constraint(equalTo: self.nameLabel.leadingAnchor).isActive = true
-        self.emailLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5
-            ).isActive = true
-        self.emailLabel.trailingAnchor.constraint(equalTo: self.isActiveLabel.leadingAnchor, constant: -6).isActive = true
-        
-//        self.isActiveLabel.leadingAnchor.constraint(equalTo: emailLabel.trailingAnchor).isActive = true
-        self.isActiveLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        self.isActiveLabelTrailingConstraint = NSLayoutConstraint(
-            item: self.isActiveLabel,
+        self.horizontalStackView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        self.horizontalStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+
+        self.horizontalStackViewTrailingConstraint = NSLayoutConstraint(
+            item: self.horizontalStackView,
             attribute: .trailing,
             relatedBy: .equal,
             toItem: self.contentView,
             attribute: .trailing,
             multiplier: 1,
             constant: -20)
-        if let constraint = self.isActiveLabelTrailingConstraint {
+        if let constraint = self.horizontalStackViewTrailingConstraint {
             self.contentView.addConstraint(constraint)
         }
     }
