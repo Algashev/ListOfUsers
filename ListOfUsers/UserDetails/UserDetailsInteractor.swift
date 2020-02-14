@@ -28,7 +28,7 @@ class UserDetailsInteractor: UserDetailsInteractorProtocol {
         self.usersService.getUsers(isForcedFromServer: false)
     }
     
-    func getUser(withUserId userId: Int) -> User {
+    func getUser(withId userId: Int) -> User {
         return self.usersService.users[userId]
     }
 }

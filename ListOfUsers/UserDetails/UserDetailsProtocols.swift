@@ -30,7 +30,7 @@ protocol UserDetailsInteractorProtocol: class {
     func navigationItemTitleFor(userId: Int) -> String
     var navigationBarBackItemTitle: String { get }
     func getUsersList()
-    func getUser(withUserId userId: Int) -> User
+    func getUser(withId userId: Int) -> User
 }
 
 protocol UserDetailsRouterProtocol: class {

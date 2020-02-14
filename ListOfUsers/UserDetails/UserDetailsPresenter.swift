@@ -38,7 +38,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
         return interactor.navigationItemTitleFor(userId: view.userId)
     }
     private var navigationBarBackItemTitle: String { return interactor.navigationBarBackItemTitle }
-    private var numberOfFriends: Int { return self.interactor.getUser(withUserId: self.view.userId).friends.count }
+    private var numberOfFriends: Int { return self.interactor.getUser(withId: self.view.userId).friends.count }
     
     // MARK: - UserDetailsPresenterProtocol methods
     
@@ -74,7 +74,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
             let cellType = UserDetailCellType(rawValue: indexPath.row)
             else { return UITableViewCell(frame: CGRect.zero) }
         cell.configureWith(
-            user: self.interactor.getUser(withUserId: self.view.userId),
+            user: self.interactor.getUser(withId: self.view.userId),
             andCellType: cellType)
         return cell
     }
@@ -83,7 +83,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "eyeColorCell", for: indexPath) as? UserDetailEyeColorCell
         else { return UITableViewCell(frame: CGRect.zero) }
-        cell.user = self.interactor.getUser(withUserId: self.view.userId)
+        cell.user = self.interactor.getUser(withId: self.view.userId)
         return cell
     }
     
@@ -91,7 +91,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "aboutCell", for: indexPath) as? UserDetailAboutCell
             else { return UITableViewCell(frame: CGRect.zero) }
-        cell.user = self.interactor.getUser(withUserId: self.view.userId)
+        cell.user = self.interactor.getUser(withId: self.view.userId)
         return cell
     }
     
@@ -99,14 +99,14 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "tagCell", for: indexPath) as? UserDetailTagCell
             else { return UITableViewCell(frame: CGRect.zero) }
-        cell.user = self.interactor.getUser(withUserId: self.view.userId)
+        cell.user = self.interactor.getUser(withId: self.view.userId)
         return cell
     }
     
     private func getFriendForRow(_ row: Int) -> User? {
-        let friendsList = self.interactor.getUser(withUserId: self.view.userId).friends
+        let friendsList = self.interactor.getUser(withId: self.view.userId).friends
         guard let friendId = friendsList[row]["id"] else { return nil }
-        return self.interactor.getUser(withUserId: friendId)
+        return self.interactor.getUser(withId: friendId)
     }
     
     private func configureFriendsCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,7 +143,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
             return
         }
         guard let cellType = UserDetailCellType(rawValue: indexPath.row) else { return }
-        let user = self.interactor.getUser(withUserId: self.view.userId)
+        let user = self.interactor.getUser(withId: self.view.userId)
         switch cellType {
         case .email: self.router.sendEmailTo(user: user)
         case .phone: self.router.makeCallTo(user: user)
