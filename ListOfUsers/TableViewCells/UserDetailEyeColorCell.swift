@@ -13,9 +13,9 @@ class UserDetailEyeColorCell: UITableViewCell {
         didSet {
             guard let eyeColor = user?.eyeColor else { return }
             switch eyeColor {
-            case .blue: eyeColorView.backgroundColor = UIColor.blue
-            case .brown: eyeColorView.backgroundColor = UIColor.brown
-            case .green: eyeColorView.backgroundColor = UIColor.green
+            case .blue: eyeColorView.backgroundColor = .blue
+            case .brown: eyeColorView.backgroundColor = .brown
+            case .green: eyeColorView.backgroundColor = .green
             }
         }
     }
@@ -27,12 +27,12 @@ class UserDetailEyeColorCell: UITableViewCell {
     }()
     
     private func configureEyeColorViewWith(circleRadius radius: CGFloat = 5) {
-        self.eyeColorView.heightAnchor.constraint(equalToConstant: radius * 2).isActive = true
-        self.eyeColorView.widthAnchor.constraint(equalToConstant: radius * 2).isActive = true
+        self.eyeColorView.heightAnchor.constraint(equalToConstant: radius * 2).activate()
+        self.eyeColorView.widthAnchor.constraint(equalToConstant: radius * 2).activate()
         self.eyeColorView.layer.cornerRadius = radius
-        self.eyeColorView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        self.eyeColorView.addConstraint(.centerY, equalTo: self.contentView)
         guard let textLabel = self.textLabel else { return }
-        self.eyeColorView.leadingAnchor.constraint(equalTo: textLabel.trailingAnchor, constant: 6).isActive = true
+        self.eyeColorView.leadingAnchor.constraint(equalTo: textLabel.trailingAnchor, constant: 6).activate()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -46,16 +46,4 @@ class UserDetailEyeColorCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
