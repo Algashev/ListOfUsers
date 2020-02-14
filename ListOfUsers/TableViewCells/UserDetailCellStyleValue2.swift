@@ -62,7 +62,7 @@ class UserDetailCellStyleValue2: UITableViewCell {
             self.detailTextLabel?.text = user.registered.format("HH:mm dd.MM.yy")
         case .favoriteFruit:
             self.textLabel?.text = "favorite fruit"
-            self.detailTextLabel?.text = self.getFruitEmojiFrom(user.favoriteFruit)
+            self.detailTextLabel?.text = user.favoriteFruit.emoji
         case .about:
             self.textLabel?.text = "about"
             self.detailTextLabel?.numberOfLines = 0
@@ -105,13 +105,5 @@ class UserDetailCellStyleValue2: UITableViewCell {
             let integer = array.first
         else { return value }
         return Int(fraction) == 0 ? String(integer) : value
-    }
-    
-    private func getFruitEmojiFrom(_ value: FavoriteFruit) -> String {
-        switch value {
-        case .apple: return "🍎"
-        case .banana: return "🍌"
-        case .strawberry: return "🍓"
-        }
     }
 }

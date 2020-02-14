@@ -18,6 +18,14 @@ enum Gender: String, Codable {
 
 enum FavoriteFruit: String, Codable {
     case apple, banana, strawberry
+    
+    var emoji: String {
+        switch self {
+        case .apple: return "🍎"
+        case .banana: return "🍌"
+        case .strawberry: return "🍓"
+        }
+    }
 }
 
 struct User: Codable, Equatable {
