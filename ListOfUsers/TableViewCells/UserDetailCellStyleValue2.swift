@@ -19,7 +19,7 @@ class UserDetailCellStyleValue2: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureWith(user: User, andCellType cellType: UserDetailCellType) {
+    func configureWith(user: User, and cellType: UserDetailCellType) {
         switch cellType {
         case .age:
             self.textLabel?.text = "age"

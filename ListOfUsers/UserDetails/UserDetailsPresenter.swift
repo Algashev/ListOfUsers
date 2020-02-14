@@ -75,7 +75,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
             else { return UITableViewCell(frame: CGRect.zero) }
         cell.configureWith(
             user: self.interactor.getUser(withId: self.view.userId),
-            andCellType: cellType)
+            and: cellType)
         return cell
     }
     
