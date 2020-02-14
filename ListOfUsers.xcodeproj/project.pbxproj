@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF1E4D7323F717CF00F33361 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E4D7223F717CF00F33361 /* UIView.swift */; };
+		FF1E4D7523F71AB100F33361 /* NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E4D7423F71AB100F33361 /* NSLayoutConstraint.swift */; };
 		FFCBE33B2332875A0037ABA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE33A2332875A0037ABA0 /* AppDelegate.swift */; };
 		FFCBE3422332875D0037ABA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFCBE3412332875D0037ABA0 /* Assets.xcassets */; };
 		FFCBE3452332875D0037ABA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFCBE3432332875D0037ABA0 /* LaunchScreen.storyboard */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		FF1E4D7223F717CF00F33361 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		FF1E4D7423F71AB100F33361 /* NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraint.swift; sourceTree = "<group>"; };
 		FFCBE3372332875A0037ABA0 /* ListOfUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListOfUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCBE33A2332875A0037ABA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFCBE3412332875D0037ABA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,10 +90,11 @@
 		FF1E4D7123F7154200F33361 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FFCBE34C233288950037ABA0 /* UINavigationController.swift */,
 				FFCBE37F233662A40037ABA0 /* Date.swift */,
-				FF1E4D7223F717CF00F33361 /* UIView.swift */,
+				FF1E4D7423F71AB100F33361 /* NSLayoutConstraint.swift */,
 				FFED01E0238174A100F9A45C /* TimeInterval.swift */,
+				FFCBE34C233288950037ABA0 /* UINavigationController.swift */,
+				FF1E4D7223F717CF00F33361 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				FFCBE3662335239E0037ABA0 /* AppSettings.swift in Sources */,
 				FFCBE3622333FF520037ABA0 /* UsersListCell.swift in Sources */,
+				FF1E4D7523F71AB100F33361 /* NSLayoutConstraint.swift in Sources */,
 				FFCBE373233570F20037ABA0 /* UserDetailsRouter.swift in Sources */,
 				FFCBE37E23364C340037ABA0 /* UserDetailEyeColorCell.swift in Sources */,
 				FFCBE377233570F20037ABA0 /* UserDetailsInteractor.swift in Sources */,
