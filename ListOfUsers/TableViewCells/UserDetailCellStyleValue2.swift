@@ -59,7 +59,7 @@ class UserDetailCellStyleValue2: UITableViewCell {
             self.detailTextLabel?.text = self.dropZeroFractionFrom(user.balance)
         case .registered:
             self.textLabel?.text = "registered"
-            self.detailTextLabel?.text = self.formatDate(user.registered)
+            self.detailTextLabel?.text = user.registered.format("HH:mm dd.MM.yy")
         case .favoriteFruit:
             self.textLabel?.text = "favorite fruit"
             self.detailTextLabel?.text = self.getFruitEmojiFrom(user.favoriteFruit)
@@ -117,11 +117,5 @@ class UserDetailCellStyleValue2: UITableViewCell {
         case .banana: return "🍌"
         case .strawberry: return "🍓"
         }
-    }
-    
-    private func formatDate(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm dd.MM.yy"
-        return dateFormatter.string(from: date)
     }
 }
