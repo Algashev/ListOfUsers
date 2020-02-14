@@ -11,52 +11,35 @@ import UIKit
 class UsersListCell: UITableViewCell {
     var user: User? {
         didSet {
-            self.nameLabel.text = user?.name
-            self.emailLabel.text = user?.email
-            self.isActiveLabel.text = user?.isActive ?? false ? "Active" : "Not Active"
-            self.accessoryType = user?.isActive ?? false ? .disclosureIndicator : .none
+            guard let user = self.user else { return }
+            self.nameLabel.text = user.name
+            self.emailLabel.text = user.email
+            self.isActiveLabel.text = user.isActive ? "Active" : "Inactive"
+            self.isActiveLabel.textColor = user.isActive ? #colorLiteral(red: 0, green: 0.4833333333, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            self.backgroundColor = user.isActive ? #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) : #colorLiteral(red: 0.9601849914, green: 0.9601849914, blue: 0.9601849914, alpha: 1)
+            self.accessoryType = user.isActive ? .disclosureIndicator : .none
             if let constraint = self.isActiveLabelTrailingConstraint {
-                constraint.constant = user?.isActive ?? false ? 0 : -20
+                constraint.constant = user.isActive ? -10 : -20
                 self.contentView.updateConstraintsIfNeeded()
             }
         }
     }
     
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .darkText
-        label.font = .preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        label.textAlignment = .left
-        return label
-    }()
+    private class UsersListLabel: UILabel {
+        convenience init(textStyle: UIFont.TextStyle, textAlignment: NSTextAlignment = .left, textColor: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) {
+            self.init()
+            self.translatesAutoresizingMaskIntoConstraints = false
+            self.font = .preferredFont(forTextStyle: textStyle)
+            self.textAlignment = textAlignment
+            self.textColor = textColor
+        }
+    }
     
-    private let emailLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .darkText
-        label.font = .preferredFont(forTextStyle: UIFont.TextStyle.footnote)
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true
-        return label
-    }()
-    
-    private let isActiveLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.darkText
-        label.font = .preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
-        label.textAlignment = .right
-        label.adjustsFontSizeToFitWidth = true
-        return label
-    }()
+    private let nameLabel = UsersListLabel(textStyle: .headline)
+    private let emailLabel = UsersListLabel(textStyle: .footnote, textColor: #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1))
+    private let isActiveLabel = UsersListLabel(textStyle: .subheadline, textAlignment: .right)
     
     private var isActiveLabelTrailingConstraint: NSLayoutConstraint?
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -91,11 +74,4 @@ class UsersListCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
