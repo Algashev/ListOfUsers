@@ -64,11 +64,9 @@ class UsersListCell: UITableViewCell {
             [self.nameLabel, self.emailLabel]
         )
         
-        self.horizontalStackView.constraint(.centerY, equalTo: self.contentView).activate()
-        self.horizontalStackView.constraint(.leading, equalTo: self.contentView, constant: 20).activate()
-
-        self.horizontalStackViewTrailingConstraint = self.horizontalStackView.constraint(.trailing, equalTo: self.contentView, constant: -20)
-        self.horizontalStackViewTrailingConstraint?.activate()
+        self.horizontalStackView.addConstraint(.centerY, equalTo: self.contentView)
+        self.horizontalStackView.addConstraint(.leading, equalTo: self.contentView, constant: 20)
+        self.horizontalStackViewTrailingConstraint = self.horizontalStackView.addConstraint(.trailing, equalTo: self.contentView, constant: -20)
     }
     
     required init?(coder aDecoder: NSCoder) {
