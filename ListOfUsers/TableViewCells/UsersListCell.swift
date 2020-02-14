@@ -66,17 +66,8 @@ class UsersListCell: UITableViewCell {
         self.horizontalStackView.constraint(.centerY, equalTo: self.contentView).activate()
         self.horizontalStackView.constraint(.leading, equalTo: self.contentView, constant: 20).activate()
 
-        self.horizontalStackViewTrailingConstraint = NSLayoutConstraint(
-            item: self.horizontalStackView,
-            attribute: .trailing,
-            relatedBy: .equal,
-            toItem: self.contentView,
-            attribute: .trailing,
-            multiplier: 1,
-            constant: -20)
-        if let constraint = self.horizontalStackViewTrailingConstraint {
-            self.contentView.addConstraint(constraint)
-        }
+        self.horizontalStackViewTrailingConstraint = self.horizontalStackView.constraint(.trailing, equalTo: self.contentView, constant: -20)
+        self.horizontalStackViewTrailingConstraint?.activate()
     }
     
     required init?(coder aDecoder: NSCoder) {
