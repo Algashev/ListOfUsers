@@ -9,7 +9,6 @@
 import UIKit
 
 class UsersListTableViewController: UITableViewController, UsersListViewProtocol {
-    
     var presenter: UsersListPresenterProtocol!
     let configurator: UsersListConfiguratorProtocol = UsersListConfigurator()
 
@@ -18,7 +17,6 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
         
         configurator.configure(with: self)
         presenter.configureView()
-
     }
     
     func setNavigationItemTitle(with value: String) {
@@ -41,23 +39,6 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
     func register(_ cellClass: AnyClass) {
         self.tableView.register(cellClass)
     }
-
-    // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return self.presenter.numberOfRows
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // Configure the cell...
-        return self.presenter.usersListCell(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter.didSelectRow(indexPath.row)
-        self.tableView.cellForRow(at: indexPath)?.isSelected = false
-    }
     
     @objc func refreshButtonTapped() {
         self.presenter.reloadDataFromServer()
@@ -65,5 +46,22 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
 
     func reloadTable() {
         self.tableView.reloadData()
+    }
+}
+
+// MARK: - TableView Delegate
+
+extension UsersListTableViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.presenter.numberOfRows
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return self.presenter.usersListCell(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.presenter.didSelectRow(indexPath.row)
+        self.tableView.cellForRow(at: indexPath)?.isSelected = false
     }
 }
