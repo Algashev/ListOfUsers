@@ -38,8 +38,8 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
         tableView.rowHeight = value
     }
     
-    func register(cellClass: AnyClass?, forCellReuseIdentifier Identifier: String) {
-        self.tableView.register(cellClass, forCellReuseIdentifier: Identifier)
+    func register(_ cellClass: AnyClass) {
+        self.tableView.register(cellClass)
     }
 
     // MARK: - Table view data source

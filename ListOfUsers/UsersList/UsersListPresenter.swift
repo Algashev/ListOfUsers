@@ -28,7 +28,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
         self.view.setNavigationBarBackItemTitle(with: self.navigationBarBackItemTitle)
         self.view.setRefreshBurButtonitem()
         self.view.setTableViewRowHeight(with: 50)
-        self.view.register(cellClass: UsersListCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        self.view.register(UsersListCell.self)
         self.interactor.getUsersList()
     }
     
@@ -41,7 +41,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
     }
     
     func cellForUsersList(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? UsersListCell else { return UITableViewCell(frame: CGRect.zero) }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(UsersListCell.self)", for: indexPath) as? UsersListCell else { return UITableViewCell(frame: CGRect.zero) }
         cell.user = self.interactor.getUser(forCellAt: indexPath.row)
         return cell
     }

@@ -14,7 +14,7 @@ protocol UsersListViewProtocol: class {
     func setRefreshBurButtonitem()
     func refreshButtonTapped()
     func setTableViewRowHeight(with value: CGFloat)
-    func register(cellClass: AnyClass?, forCellReuseIdentifier Identifier: String)
+    func register(_ cellClass: AnyClass)
     func reloadTable()
 }
 
