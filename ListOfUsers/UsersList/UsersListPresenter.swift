@@ -9,7 +9,6 @@
 import UIKit
 
 class UsersListPresenter: UsersListPresenterProtocol {
-    
     weak var view: UsersListViewProtocol!
     var interactor: UsersListInteractorProtocol!
     var router: UsersListRouterProtocol!
@@ -36,7 +35,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
         self.view.reloadTable()
     }
     
-    func getNumberOfRows() -> Int {
+    var numberOfRows: Int {
         return self.interactor.numberOfUsers
     }
     
