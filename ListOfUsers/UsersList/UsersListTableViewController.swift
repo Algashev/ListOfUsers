@@ -51,7 +51,7 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Configure the cell...
-        return self.presenter.cellForUsersList(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
+        return self.presenter.usersListCell(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

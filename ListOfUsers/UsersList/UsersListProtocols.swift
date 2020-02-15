@@ -23,7 +23,7 @@ protocol UsersListPresenterProtocol: class {
     func configureView()
     func loadUsersInTable()
     func getNumberOfRows() -> Int
-    func cellForUsersList(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell?
+    func usersListCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell?
     func reloadDataFromServer()
     func didSelectRow(_ row: Int)
 }
