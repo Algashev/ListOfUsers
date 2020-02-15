@@ -31,7 +31,7 @@ protocol UsersListPresenterProtocol: class {
 protocol UsersListInteractorProtocol: class {
     var navigationItemTitle: String { get }
     var navigationBarBackItemTitle: String { get }
-    func getNumberOfUsers() -> Int
+    var numberOfUsers: Int { get }
     func getUsersList()
     func user(forCellAt row: Int) -> User
     func reloadDataFromServer()

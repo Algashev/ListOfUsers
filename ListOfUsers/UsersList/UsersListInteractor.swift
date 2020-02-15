@@ -26,7 +26,7 @@ class UsersListInteractor: UsersListInteractorProtocol {
         self.usersService.getUsers(isForcedFromServer: false)
     }
     
-    func getNumberOfUsers() -> Int {
+    var numberOfUsers: Int {
         return self.usersService.users.count
     }
     

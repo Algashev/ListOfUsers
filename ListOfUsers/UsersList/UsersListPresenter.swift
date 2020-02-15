@@ -37,7 +37,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
     }
     
     func getNumberOfRows() -> Int {
-        return self.interactor.getNumberOfUsers()
+        return self.interactor.numberOfUsers
     }
     
     func usersListCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell? {
