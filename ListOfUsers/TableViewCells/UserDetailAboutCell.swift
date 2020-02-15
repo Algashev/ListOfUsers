@@ -44,14 +44,14 @@ class UserDetailAboutCell: UITableViewCell {
         self.contentView.addSubview(aboutTitleLabel)
         self.contentView.addSubview(aboutBodyLabel)
         
-        self.aboutTitleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 6).isActive = true
-        self.aboutTitleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+        self.aboutTitleLabel.addConstraint(.top, equalTo: self.contentView, constant: 6)
+        self.aboutTitleLabel.addConstraint(.leading, equalTo: self.contentView, constant: 20)
         self.aboutTitleLabel.widthAnchor.constraint(equalToConstant: 91).isActive = true
         
         self.aboutBodyLabel.topAnchor.constraint(equalTo: self.aboutTitleLabel.bottomAnchor, constant: 6).isActive = true
-        self.aboutBodyLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
-        self.aboutBodyLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
-        self.aboutBodyLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 10).isActive = true
+        self.aboutBodyLabel.addConstraint(.leading, equalTo: self.contentView, constant: 20)
+        self.aboutBodyLabel.addConstraint(.trailing, equalTo: self.contentView, constant: -20)
+        self.aboutBodyLabel.addConstraint(.bottom, equalTo: self.contentView, constant: 10)
     }
     
     required init?(coder aDecoder: NSCoder) {
