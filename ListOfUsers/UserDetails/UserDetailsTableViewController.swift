@@ -20,8 +20,6 @@ class UserDetailsTableViewController: UITableViewController, UserDetailsViewProt
         
         configurator.configure(with: self)
         presenter.configureView()
-//        tableView.estimatedRowHeight = 44
-
     }
     
     required init(withUserId id: Int) {
@@ -67,7 +65,7 @@ class UserDetailsTableViewController: UITableViewController, UserDetailsViewProt
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return indexPath.section == 0 && indexPath.row != 1 ? UITableView.automaticDimension : 44
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
