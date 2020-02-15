@@ -33,7 +33,7 @@ protocol UsersListInteractorProtocol: class {
     var navigationBarBackItemTitle: String { get }
     func getNumberOfUsers() -> Int
     func getUsersList()
-    func getUser(forCellAt row: Int) -> User
+    func user(forCellAt row: Int) -> User
     func reloadDataFromServer()
     func isActiveUserAtRow(_ row: Int) -> Bool
 }

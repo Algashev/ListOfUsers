@@ -30,7 +30,7 @@ class UsersListInteractor: UsersListInteractorProtocol {
         return self.usersService.users.count
     }
     
-    func getUser(forCellAt row: Int) -> User {
+    func user(forCellAt row: Int) -> User {
         return self.usersService.users[row]
     }
     

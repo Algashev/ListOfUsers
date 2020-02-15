@@ -42,7 +42,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
     
     func usersListCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell? {
         let cell = tableView.dequeueReusableCell(UsersListCell.self, for: indexPath)
-        cell?.user = self.interactor.getUser(forCellAt: indexPath.row)
+        cell?.user = self.interactor.user(forCellAt: indexPath.row)
         return cell
     }
     
