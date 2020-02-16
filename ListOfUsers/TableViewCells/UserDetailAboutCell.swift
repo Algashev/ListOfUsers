@@ -10,9 +10,7 @@ import UIKit
 
 class UserDetailAboutCell: UITableViewCell {
     var user: User? {
-        didSet {
-            self.aboutBodyLabel.text = user?.about
-        }
+        didSet { self.aboutBodyLabel.text = user?.about }
     }
     
     private let aboutTitleLabel: UILabel = {
@@ -33,11 +31,6 @@ class UserDetailAboutCell: UITableViewCell {
         label.numberOfLines = 0
         return label
     }()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -57,11 +50,4 @@ class UserDetailAboutCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
