@@ -27,8 +27,8 @@ class UserDetailEyeColorCell: UITableViewCell {
     }()
     
     private func configureEyeColorViewWith(circleRadius radius: CGFloat = 5) {
-        self.eyeColorView.heightAnchor.constraint(equalToConstant: radius * 2).activate()
-        self.eyeColorView.widthAnchor.constraint(equalToConstant: radius * 2).activate()
+        let eyeColorSize = CGSize(width: radius * 2, height: radius * 2)
+        self.eyeColorView.addSizeConstraints(eyeColorSize)
         self.eyeColorView.layer.cornerRadius = radius
         self.eyeColorView.addConstraint(.centerY, equalTo: self.contentView)
         guard let textLabel = self.textLabel else { return }

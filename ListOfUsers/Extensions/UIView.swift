@@ -19,4 +19,18 @@ extension UIView {
         constraint.activate()
         return constraint
     }
+    
+    func sizeConstraints(_ size: CGSize) -> (widthAnchor: NSLayoutConstraint, heightAnchor: NSLayoutConstraint) {
+        let widthConstraint = self.widthAnchor.constraint(equalToConstant: size.width)
+        let heightConstraint = self.heightAnchor.constraint(equalToConstant: size.height)
+        return (widthConstraint, heightConstraint)
+    }
+    
+    @discardableResult
+    func addSizeConstraints(_ size: CGSize) -> (widthAnchor: NSLayoutConstraint, heightAnchor: NSLayoutConstraint) {
+        let constraints = self.sizeConstraints(size)
+        constraints.widthAnchor.activate()
+        constraints.heightAnchor.activate()
+        return constraints
+    }
 }
