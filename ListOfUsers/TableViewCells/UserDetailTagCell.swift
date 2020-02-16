@@ -23,7 +23,7 @@ class UserDetailTagCell: UITableViewCell {
         label.text = "tags"
         label.textColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
         label.textAlignment = .right
-        label.font = .preferredFont(forTextStyle: UIFont.TextStyle.footnote)
+        label.font = .preferredFont(forTextStyle: .footnote)
         return label
     }()
     
@@ -31,7 +31,7 @@ class UserDetailTagCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.darkText
-        label.font = .preferredFont(forTextStyle: UIFont.TextStyle.footnote)
+        label.font = .preferredFont(forTextStyle: .footnote)
         label.textAlignment = .left
         return label
     }()
@@ -48,14 +48,14 @@ class UserDetailTagCell: UITableViewCell {
         self.contentView.addSubview(tagScrollView)
         self.tagScrollView.addSubview(tagBodyLabel)
         
-        self.tagTitleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 6).isActive = true
-        self.tagTitleLabel.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
+        self.tagTitleLabel.addConstraint(.top, equalTo: self.contentView, constant: 6)
+        self.tagTitleLabel.addConstraint(.leading, equalTo: self.contentView, constant: 20)
         self.tagTitleLabel.widthAnchor.constraint(equalToConstant: 91).isActive = true
         
         self.tagScrollView.topAnchor.constraint(equalTo: self.tagTitleLabel.bottomAnchor, constant: 6).isActive = true
-        self.tagScrollView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20).isActive = true
-        self.tagScrollView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
-        self.tagScrollView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -5).isActive = true
+        self.tagScrollView.addConstraint(.leading, equalTo: self.contentView, constant: 20)
+        self.tagScrollView.addConstraint(.trailing, equalTo: self.contentView, constant: -20)
+        self.tagScrollView.addConstraint(.bottom, equalTo: self.contentView, constant: -5)
         self.tagScrollView.heightAnchor.constraint(equalToConstant: 20).isActive = true
     }
     
