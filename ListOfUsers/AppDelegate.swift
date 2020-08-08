@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UINavigationController(with: UsersListTableViewController(nibName: nil, bundle: nil))
+        let usersListTableViewController = UsersListTableViewController()
+        let navigationController = UINavigationController(rootViewController: usersListTableViewController)
+        self.window = UIWindow(rootViewController: navigationController)
         
         return true
     }
