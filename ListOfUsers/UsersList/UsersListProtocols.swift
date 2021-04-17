@@ -9,12 +9,21 @@
 import UIKit
 
 protocol UsersListViewProtocol: class {
-    var navigationItem: UINavigationItem { get }
-    var tableViewRowHeight: CGFloat { get set }
     
+    // MARK: - NavigationItems
+    
+    var navigationItem: UINavigationItem { get }
     func setNavigationBarBackItemTitle(_ title: String)
+    
+    // MARK: - RefreshBarButton
+    
     func setRefreshBarButtonItem()
     func refreshButtonTapped()
+    
+    // MARK: - TableView
+    
+    var tableViewRowHeight: CGFloat { get set }
+    
     func register(_ cellClass: AnyClass)
     func reloadTable()
 }
