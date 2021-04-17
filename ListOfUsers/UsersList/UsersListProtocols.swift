@@ -31,7 +31,7 @@ protocol UsersListViewProtocol: class {
 protocol UsersListPresenterProtocol: class {
     var router: UsersListRouterProtocol! { get set }
     func configureView()
-    func loadUsersInTable()
+    func reloadUsers()
     var numberOfRows: Int { get }
     func userCell(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell?
     func reloadDataFromServer()

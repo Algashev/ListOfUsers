@@ -45,6 +45,6 @@ class UsersListInteractor: UsersListInteractorProtocol {
 
 extension UsersListInteractor: UsersServiceDelegate {
     func dataReadyForUse() {
-        self.presenter.loadUsersInTable()
+        self.presenter.reloadUsers()
     }
 }

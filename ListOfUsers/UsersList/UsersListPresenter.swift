@@ -34,7 +34,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
         self.interactor.getUsersList()
     }
     
-    func loadUsersInTable() {
+    func reloadUsers() {
         self.view.reloadTable()
     }
     
