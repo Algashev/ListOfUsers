@@ -51,15 +51,15 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
 
 extension UsersListTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter.numberOfRows
+        self.presenter.numberOfRows
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.presenter.userCell(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
+        self.presenter.userCell(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
         self.presenter.didSelectRow(indexPath.row)
-        self.tableView.cellForRow(at: indexPath)?.isSelected = false
     }
 }
