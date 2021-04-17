@@ -55,7 +55,7 @@ extension UsersListTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.presenter.usersListCell(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
+        return self.presenter.userCell(tableView, cellForRowAt: indexPath) ?? UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
