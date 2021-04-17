@@ -1,5 +1,5 @@
 //
-//  UsersListCell.swift
+//  UserCell.swift
 //  ListOfUsers
 //
 //  Created by Александр Алгашев on 19/09/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UsersListCell: UITableViewCell {
+class UserCell: UITableViewCell {
     var user: User? {
         didSet {
             guard let user = self.user else { return }

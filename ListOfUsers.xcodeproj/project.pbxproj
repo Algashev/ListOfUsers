@@ -25,7 +25,7 @@
 		FFCBE35C2332A1B40037ABA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE35B2332A1B40037ABA0 /* User.swift */; };
 		FFCBE35E2332A9830037ABA0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE35D2332A9830037ABA0 /* NetworkService.swift */; };
 		FFCBE3602333E5540037ABA0 /* UsersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE35F2333E5540037ABA0 /* UsersService.swift */; };
-		FFCBE3622333FF520037ABA0 /* UsersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE3612333FF520037ABA0 /* UsersListCell.swift */; };
+		FFCBE3622333FF520037ABA0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE3612333FF520037ABA0 /* UserCell.swift */; };
 		FFCBE3662335239E0037ABA0 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE3652335239E0037ABA0 /* AppSettings.swift */; };
 		FFCBE368233529060037ABA0 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE367233529060037ABA0 /* StorageService.swift */; };
 		FFCBE36B23352D4A0037ABA0 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFCBE36A23352D4A0037ABA0 /* RepeatingTimer.swift */; };
@@ -64,7 +64,7 @@
 		FFCBE35B2332A1B40037ABA0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFCBE35D2332A9830037ABA0 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		FFCBE35F2333E5540037ABA0 /* UsersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersService.swift; sourceTree = "<group>"; };
-		FFCBE3612333FF520037ABA0 /* UsersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListCell.swift; sourceTree = "<group>"; };
+		FFCBE3612333FF520037ABA0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		FFCBE3652335239E0037ABA0 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		FFCBE367233529060037ABA0 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		FFCBE36A23352D4A0037ABA0 /* RepeatingTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		FFCBE3832336692C0037ABA0 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				FFCBE3612333FF520037ABA0 /* UsersListCell.swift */,
+				FFCBE3612333FF520037ABA0 /* UserCell.swift */,
 				FFCBE37B2335F7B20037ABA0 /* UserDetailCellStyleValue2.swift */,
 				FFCBE37D23364C340037ABA0 /* UserDetailEyeColorCell.swift */,
 				FFCBE381233669230037ABA0 /* UserDetailAboutCell.swift */,
@@ -262,7 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFCBE3662335239E0037ABA0 /* AppSettings.swift in Sources */,
-				FFCBE3622333FF520037ABA0 /* UsersListCell.swift in Sources */,
+				FFCBE3622333FF520037ABA0 /* UserCell.swift in Sources */,
 				FF1E4D7523F71AB100F33361 /* NSLayoutConstraint.swift in Sources */,
 				FFCBE373233570F20037ABA0 /* UserDetailsRouter.swift in Sources */,
 				FFCBE37E23364C340037ABA0 /* UserDetailEyeColorCell.swift in Sources */,

@@ -49,7 +49,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
         self.view.register(cellClass: UserDetailEyeColorCell.self, forCellReuseIdentifier: "eyeColorCell")
         self.view.register(cellClass: UserDetailAboutCell.self, forCellReuseIdentifier: "aboutCell")
         self.view.register(cellClass: UserDetailTagCell.self, forCellReuseIdentifier: "tagCell")
-        self.view.register(cellClass: UsersListCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        self.view.register(cellClass: UserCell.self, forCellReuseIdentifier: "reuseIdentifier")
         self.interactor.getUsersList()
     }
     
@@ -111,7 +111,7 @@ class UserDetailsPresenter: UserDetailsPresenterProtocol {
     
     private func configureFriendsCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? UsersListCell,
+            let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as? UserCell,
             let friend = self.getFriendForRow(indexPath.row)
         else { return UITableViewCell(frame: CGRect.zero) }
         cell.user = friend
