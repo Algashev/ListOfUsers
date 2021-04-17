@@ -23,7 +23,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
     // MARK: - UsersListPresenterProtocol methods
     
     func configureView() {
-        self.view.setNavigationItemTitle(with: self.navigationItemTitle)
+        self.view.navigationItem.title = self.navigationItemTitle
         self.view.setNavigationBarBackItemTitle(with: self.navigationBarBackItemTitle)
         self.view.setRefreshBurButtonitem()
         self.view.setTableViewRowHeight(with: 50)

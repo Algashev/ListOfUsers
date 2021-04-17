@@ -19,10 +19,6 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
         presenter.configureView()
     }
     
-    func setNavigationItemTitle(with value: String) {
-        self.navigationItem.title = value
-    }
-    
     func setNavigationBarBackItemTitle(with value: String) {
         self.navigationItem.backBarButtonItem =
             UIBarButtonItem(title: value, style: .plain, target: nil, action: nil)
