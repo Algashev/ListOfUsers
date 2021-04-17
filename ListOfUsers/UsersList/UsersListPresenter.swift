@@ -51,7 +51,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
     
     func didSelectUser(atRow row: Int) {
         if self.interactor.isActiveUser(atRow: row) {
-            self.router.showUserDetailsForRow(row)
+            self.router.showUserDetails(atRow: row)
         }
     }
 }

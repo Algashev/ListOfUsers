@@ -49,7 +49,7 @@ protocol UsersListInteractorProtocol: class {
 }
 
 protocol UsersListRouterProtocol: class {
-    func showUserDetailsForRow(_ row: Int)
+    func showUserDetails(atRow row: Int)
 }
 
 protocol UsersListConfiguratorProtocol: class {

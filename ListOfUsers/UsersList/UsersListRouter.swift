@@ -15,7 +15,7 @@ class UsersListRouter: UsersListRouterProtocol {
         self.tableViewController = tableViewController
     }
     
-    func showUserDetailsForRow(_ row: Int) {
+    func showUserDetails(atRow row: Int) {
        let userDetailsController = UserDetailsTableViewController(withUserId: row)
         self.tableViewController.navigationController?.pushViewController(userDetailsController, animated: true)
     }
