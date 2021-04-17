@@ -19,9 +19,9 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
         presenter.configureView()
     }
     
-    func setNavigationBarBackItemTitle(with value: String) {
-        self.navigationItem.backBarButtonItem =
-            UIBarButtonItem(title: value, style: .plain, target: nil, action: nil)
+    func setNavigationBarBackItemTitle(_ title: String) {
+        let barButtonItem = UIBarButtonItem(title: title, style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = barButtonItem
     }
     
     func setRefreshBurButtonitem() {

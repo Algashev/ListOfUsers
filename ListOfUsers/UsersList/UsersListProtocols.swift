@@ -11,7 +11,7 @@ import UIKit
 protocol UsersListViewProtocol: class {
     var navigationItem: UINavigationItem { get }
     
-    func setNavigationBarBackItemTitle(with value: String)
+    func setNavigationBarBackItemTitle(_ title: String)
     func setRefreshBurButtonitem()
     func refreshButtonTapped()
     func setTableViewRowHeight(with value: CGFloat)

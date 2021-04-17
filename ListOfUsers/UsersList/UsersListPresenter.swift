@@ -17,14 +17,14 @@ class UsersListPresenter: UsersListPresenterProtocol {
         self.view = view
     }
     
-    private var navigationItemTitle: String { return interactor.navigationItemTitle }
-    private var navigationBarBackItemTitle: String { return interactor.navigationBarBackItemTitle }
+    private var navigationItemTitle: String { interactor.navigationItemTitle }
+    private var navigationBarBackItemTitle: String { interactor.navigationBarBackItemTitle }
     
     // MARK: - UsersListPresenterProtocol methods
     
     func configureView() {
         self.view.navigationItem.title = self.navigationItemTitle
-        self.view.setNavigationBarBackItemTitle(with: self.navigationBarBackItemTitle)
+        self.view.setNavigationBarBackItemTitle(self.navigationBarBackItemTitle)
         self.view.setRefreshBurButtonitem()
         self.view.setTableViewRowHeight(with: 50)
         self.view.register(UserCell.self)
