@@ -11,5 +11,5 @@ import Foundation
 struct AppSettings {
     static let sourceUrl = "https://www.dropbox.com/s/s8g63b149tnbg8x/users.json?raw=1"
     static let refreshingInterval: TimeInterval = 5.minutes
-    static let savedDataPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("Users.plist")
+    static let storageURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("Users.plist")
 }

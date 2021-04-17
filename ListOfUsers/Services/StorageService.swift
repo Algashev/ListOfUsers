@@ -21,7 +21,7 @@ class StorageService: StorageServiceProtocol {
     static let shared = StorageService()
     
     var isExistSavedData: Bool {
-        return FileManager.default.fileExists(atPath: AppSettings.savedDataPath.path)
+        return FileManager.default.fileExists(atPath: AppSettings.storageURL.path)
     }
     var dateOfSaving: Date {
         return UserDefaults.standard.object(forKey: "dateOfSaving") as? Date ?? Date(timeIntervalSince1970: 0)
@@ -32,7 +32,7 @@ class StorageService: StorageServiceProtocol {
         encoder.outputFormat = .xml
         do {
             let data = try encoder.encode(users)
-            try data.write(to: AppSettings.savedDataPath)
+            try data.write(to: AppSettings.storageURL)
             UserDefaults.standard.set(Date(), forKey: "dateOfSaving")
         } catch {
             print(error)
@@ -42,7 +42,7 @@ class StorageService: StorageServiceProtocol {
     func removeOldData() {
         guard self.isExistSavedData else { return }
         do {
-            try FileManager.default.removeItem(at: AppSettings.savedDataPath)
+            try FileManager.default.removeItem(at: AppSettings.storageURL)
         } catch {
             print(error)
         }
@@ -50,7 +50,7 @@ class StorageService: StorageServiceProtocol {
     
     func getSavedData() -> [User] {
         do {
-            let data = try Data(contentsOf: AppSettings.savedDataPath)
+            let data = try Data(contentsOf: AppSettings.storageURL)
             let decoder = PropertyListDecoder()
             let users = try decoder.decode([User].self, from: data)
             return users
