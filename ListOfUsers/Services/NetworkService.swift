@@ -18,7 +18,7 @@ class NetworkService: NetworkServiceProtocol {
     
     private let sharedSession = URLSession.shared
     private var dataTask: URLSessionDataTask?
-    private let url = AppSettings.sourceUrl
+    private let url = AppSettings.sourcePath
     
     func getUsersFromJSON(completion: @escaping ([User]) -> ()) {
         self.dataTask?.cancel()
