@@ -12,7 +12,7 @@ protocol UsersListViewProtocol: class {
     var navigationItem: UINavigationItem { get }
     
     func setNavigationBarBackItemTitle(_ title: String)
-    func setRefreshBurButtonitem()
+    func setRefreshBarButtonItem()
     func refreshButtonTapped()
     func setTableViewRowHeight(with value: CGFloat)
     func register(_ cellClass: AnyClass)

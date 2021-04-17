@@ -25,7 +25,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
     func configureView() {
         self.view.navigationItem.title = self.navigationItemTitle
         self.view.setNavigationBarBackItemTitle(self.navigationBarBackItemTitle)
-        self.view.setRefreshBurButtonitem()
+        self.view.setRefreshBarButtonItem()
         self.view.setTableViewRowHeight(with: 50)
         self.view.register(UserCell.self)
         self.interactor.getUsersList()

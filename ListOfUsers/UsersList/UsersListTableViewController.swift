@@ -24,8 +24,9 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
         self.navigationItem.backBarButtonItem = barButtonItem
     }
     
-    func setRefreshBurButtonitem() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshButtonTapped))
+    func setRefreshBarButtonItem() {
+        let barButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshButtonTapped))
+        self.navigationItem.rightBarButtonItem = barButtonItem
     }
     
     func setTableViewRowHeight(with value: CGFloat) {
