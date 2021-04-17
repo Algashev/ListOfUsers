@@ -26,7 +26,7 @@ protocol UsersListPresenterProtocol: class {
     var numberOfRows: Int { get }
     func userCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell?
     func reloadDataFromServer()
-    func didSelectRow(_ row: Int)
+    func didSelectUser(atRow row: Int)
 }
 
 protocol UsersListInteractorProtocol: class {

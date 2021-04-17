@@ -49,7 +49,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
         self.interactor.reloadDataFromServer()
     }
     
-    func didSelectRow(_ row: Int) {
+    func didSelectUser(atRow row: Int) {
         if self.interactor.isActiveUserAtRow(row) {
             self.router.showUserDetailsForRow(row)
         }

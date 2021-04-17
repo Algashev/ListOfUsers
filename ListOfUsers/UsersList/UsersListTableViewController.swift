@@ -60,6 +60,6 @@ extension UsersListTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        self.presenter.didSelectRow(indexPath.row)
+        self.presenter.didSelectUser(atRow: indexPath.row)
     }
 }
