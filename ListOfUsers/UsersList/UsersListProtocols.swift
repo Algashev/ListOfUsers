@@ -33,7 +33,7 @@ protocol UsersListPresenterProtocol: class {
     func configureView()
     func loadUsersInTable()
     var numberOfRows: Int { get }
-    func userCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell?
+    func userCell(at indexPath: IndexPath, in tableView: UITableView) -> UITableViewCell?
     func reloadDataFromServer()
     func didSelectUser(atRow row: Int)
 }
