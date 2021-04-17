@@ -13,7 +13,7 @@ protocol UsersListViewProtocol: class {
     // MARK: - NavigationItems
     
     var navigationItem: UINavigationItem { get }
-    func setNavigationBarBackItemTitle(_ title: String)
+    func setNavigationBarBackItemTitle(_ title: String?)
     
     // MARK: - RefreshBarButton
     
@@ -40,7 +40,7 @@ protocol UsersListPresenterProtocol: class {
 
 protocol UsersListInteractorProtocol: class {
     var navigationItemTitle: String { get }
-    var navigationBarBackItemTitle: String { get }
+    var navigationBarBackItemTitle: String? { get }
     var numberOfUsers: Int { get }
     func getUsersList()
     func user(forCellAt row: Int) -> User

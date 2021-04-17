@@ -18,7 +18,7 @@ class UsersListPresenter: UsersListPresenterProtocol {
     }
     
     private var navigationItemTitle: String { interactor.navigationItemTitle }
-    private var navigationBarBackItemTitle: String { interactor.navigationBarBackItemTitle }
+    private var navigationBarBackItemTitle: String? { interactor.navigationBarBackItemTitle }
     
     // MARK: - UsersListPresenterProtocol methods
     

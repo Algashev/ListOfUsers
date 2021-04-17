@@ -20,7 +20,7 @@ class UsersListInteractor: UsersListInteractorProtocol {
     // MARK: - UsersListInteractorProtocol methods
     
     var navigationItemTitle: String { "List Of Users" }
-    var navigationBarBackItemTitle: String { "" }
+    var navigationBarBackItemTitle: String? { nil }
     
     func getUsersList() {
         self.usersService.getUsers(isForcedFromServer: false)
