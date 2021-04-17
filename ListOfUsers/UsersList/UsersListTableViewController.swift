@@ -11,6 +11,11 @@ import UIKit
 class UsersListTableViewController: UITableViewController, UsersListViewProtocol {
     var presenter: UsersListPresenterProtocol!
     let configurator: UsersListConfiguratorProtocol = UsersListConfigurator()
+    
+    var tableViewRowHeight: CGFloat {
+        get { self.tableView.rowHeight }
+        set { self.tableView.rowHeight = newValue }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +32,6 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
     func setRefreshBarButtonItem() {
         let barButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshButtonTapped))
         self.navigationItem.rightBarButtonItem = barButtonItem
-    }
-    
-    func setTableViewRowHeight(with value: CGFloat) {
-        tableView.rowHeight = value
     }
     
     func register(_ cellClass: AnyClass) {

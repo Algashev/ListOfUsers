@@ -10,17 +10,17 @@ import UIKit
 
 protocol UsersListViewProtocol: class {
     var navigationItem: UINavigationItem { get }
+    var tableViewRowHeight: CGFloat { get set }
     
     func setNavigationBarBackItemTitle(_ title: String)
     func setRefreshBarButtonItem()
     func refreshButtonTapped()
-    func setTableViewRowHeight(with value: CGFloat)
     func register(_ cellClass: AnyClass)
     func reloadTable()
 }
 
 protocol UsersListPresenterProtocol: class {
-    var router: UsersListRouterProtocol! { set get }
+    var router: UsersListRouterProtocol! { get set }
     func configureView()
     func loadUsersInTable()
     var numberOfRows: Int { get }
