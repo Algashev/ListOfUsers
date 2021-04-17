@@ -24,10 +24,10 @@ class UsersService: UsersServiceProtocol {
     
     private let networkService: NetworkServiceProtocol = NetworkService.shared
     private let storageService: StorageServiceProtocol = StorageService.shared
-    private var timer = RepeatingTimer(timeInterval: AppSettings.dataRefreshingTimeInterval)
+    private var timer = RepeatingTimer(timeInterval: AppSettings.refreshingInterval)
     private var isNeedUpdateData: Bool {
         get {
-            return Date() > Date(timeInterval: AppSettings.dataRefreshingTimeInterval, since: self.storageService.dateOfSaving)
+            return Date() > Date(timeInterval: AppSettings.refreshingInterval, since: self.storageService.dateOfSaving)
         }
     }
     weak var delegate: UsersServiceDelegate?
@@ -54,7 +54,7 @@ class UsersService: UsersServiceProtocol {
             print("Request from server: \(Date())")
             if !timer.isCancelled && self.timer.eventHandler != nil {
                 self.timer.cancel()
-                self.timer = RepeatingTimer(timeInterval: AppSettings.dataRefreshingTimeInterval)
+                self.timer = RepeatingTimer(timeInterval: AppSettings.refreshingInterval)
             }
             self.timer.eventHandler = { [unowned self] in
                 print("Timer Fired: \(Date())")
