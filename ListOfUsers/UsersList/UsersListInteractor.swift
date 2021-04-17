@@ -19,19 +19,19 @@ class UsersListInteractor: UsersListInteractorProtocol {
     
     // MARK: - UsersListInteractorProtocol methods
     
-    var navigationItemTitle: String { return "List Of Users" }
-    var navigationBarBackItemTitle: String { return "" }
+    var navigationItemTitle: String { "List Of Users" }
+    var navigationBarBackItemTitle: String { "" }
     
     func getUsersList() {
         self.usersService.getUsers(isForcedFromServer: false)
     }
     
     var numberOfUsers: Int {
-        return self.usersService.users.count
+        self.usersService.users.count
     }
     
     func user(forCellAt row: Int) -> User {
-        return self.usersService.users[row]
+        self.usersService.users[row]
     }
     
     func reloadDataFromServer() {
@@ -39,7 +39,7 @@ class UsersListInteractor: UsersListInteractorProtocol {
     }
     
     func isActiveUserAtRow(_ row: Int) -> Bool {
-        return self.usersService.users[row].isActive
+        self.usersService.users[row].isActive
     }
 }
 
