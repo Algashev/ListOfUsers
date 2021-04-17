@@ -20,8 +20,8 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configurator.configure(with: self)
-        presenter.configureView()
+        self.configurator.configure(with: self)
+        self.presenter.configureView()
     }
     
     func setNavigationBarBackItemTitle(_ title: String) {
@@ -29,17 +29,21 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
         self.navigationItem.backBarButtonItem = barButtonItem
     }
     
+    // MARK: - RefreshBarButton
+    
     func setRefreshBarButtonItem() {
         let barButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshButtonTapped))
         self.navigationItem.rightBarButtonItem = barButtonItem
     }
     
-    func register(_ cellClass: AnyClass) {
-        self.tableView.register(cellClass)
-    }
-    
     @objc func refreshButtonTapped() {
         self.presenter.reloadDataFromServer()
+    }
+    
+    // MARK: - TableView
+    
+    func register(_ cellClass: AnyClass) {
+        self.tableView.register(cellClass)
     }
 
     func reloadTable() {
