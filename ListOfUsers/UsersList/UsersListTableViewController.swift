@@ -43,7 +43,7 @@ class UsersListTableViewController: UITableViewController, UsersListViewProtocol
     }
 
     func reloadTable() {
-        self.tableView.reloadData()
+        self.tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
     }
 }
 
