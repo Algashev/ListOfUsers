@@ -38,7 +38,7 @@ class UsersListInteractor: UsersListInteractorProtocol {
         self.usersService.getUsers(isForcedFromServer: true)
     }
     
-    func isActiveUserAtRow(_ row: Int) -> Bool {
+    func isActiveUser(atRow row: Int) -> Bool {
         self.usersService.users[row].isActive
     }
 }

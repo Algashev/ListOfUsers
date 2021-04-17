@@ -36,7 +36,7 @@ protocol UsersListInteractorProtocol: class {
     func getUsersList()
     func user(forCellAt row: Int) -> User
     func reloadDataFromServer()
-    func isActiveUserAtRow(_ row: Int) -> Bool
+    func isActiveUser(atRow row: Int) -> Bool
 }
 
 protocol UsersListRouterProtocol: class {
